@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dani <dani@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 17:45:09 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/07/26 20:23:10 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/07/27 21:39:34 by dani             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ps_check_input(int argc, char **argv);
 int		ps_check_ifnumber(int argc, char **argv);
 int		ps_check_maxint(int argc, char **argv);
 int		ps_check_duplicates(int argc, char **argv);
+int		ps_strncmp(const char *str1, const char *str2);
+
 
 void	ps_check_input(int argc, char **argv)
 {
@@ -57,7 +59,8 @@ int		ps_check_maxint(int argc, char **argv)
 	i = 1;
 	while (i <= argc)
 	{
-		if ((unsigned int)ft_atoi(argv[i]) > MAX_INT)
+		if ((unsigned int)ft_atoi(argv[i]) > MAX_INT || \
+		(unsigned int)ft_atoi(argv[i]) < MIN_INT)
 			return (0);
 		i++;
 	}
@@ -82,4 +85,18 @@ int		ps_check_duplicates(int argc, char **argv)
 		i++;
 	}
 	return (1);
+}
+
+int	ps_strncmp(const char *str1, const char *str2)
+{
+	size_t	i;
+
+	i = 0;
+	while (str1[i] != '\0' || str2[i] != '\0')
+	{
+		if (str1[i] != str2[i])
+			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+		i++;
+	}
+	return (0);
 }
