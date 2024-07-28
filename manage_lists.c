@@ -6,19 +6,19 @@
 /*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 18:26:51 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/07/26 19:43:07 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/07/28 16:35:27 by dangonz3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack		*ps_lstnew(void *value);
+t_stack		*ps_lstnew(int value);
 void		ps_lstadd_front(t_stack **stack, t_stack *new_node);
 void		ps_lstadd_back(t_stack **stack, t_stack *new_node);
 t_stack		*ps_lstlast(t_stack *stack);
 int			ps_lstsize(t_stack *stack);
 
-t_stack	*ps_lstnew(void *value)
+t_stack	*ps_lstnew(int value)
 {
 	t_stack	*new_node;
 
@@ -74,16 +74,3 @@ int	ps_lstsize(t_stack *stack)
 	}
 	return (i);
 }
-
-/* void	printList(t_stack *head)
-{
-	t_stack	*tmp;
-
-	tmp = head;
-	while (tmp != NULL)
-	{
-		ft_putnbr_fd(tmp->value, 1);
-		ft_putendl_fd("", 1);
-		tmp = tmp->next;
-	}
-} */

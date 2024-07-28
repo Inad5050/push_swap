@@ -5,65 +5,98 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/26 19:19:32 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/07/26 20:20:52 by dangonz3         ###   ########.fr       */
+/*   Created: 2024/07/26 17:58:58 by dangonz3          #+#    #+#             */
+/*   Updated: 2024/07/28 16:16:48 by dangonz3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ps_index_stack(t_stack **stack);
-int 	ps_checkif_sorted(t_stack **stack);
-void	ps_sort_stack(t_list **stack_a, t_list **stack_b);
-int		ps_strncmp(const char *str1, const char *str2);
+int		ps_error(char *message);
+int		ps_atoi(const char *str);
+void	ps_free_stack(t_stack **stack);
+int		ps_min_index(t_stack **stack, int val);
+int		ps_distance(t_stack **stack, int index);
 
-void	ps_index_stack(t_stack **stack)
+int	ps_error(char *message)
 {
-	t_stack	*current;
-	int		i;
-
-	i = 0;
-	current = *stack;
-	current->index = i++;
-	while (current->next)
-	{
-		current = current->next;
-		current->index = i++;
-	}
+	ft_printf(COLOR_RED "ERROR:\n%s\n" COLOR_RESET, message);
+	exit (0);
 }
 
-int	ps_checkif_sorted(t_stack **stack)
+int	ps_atoi(const char *str)
 {
-	t_stack	*current;
+	unsigned int	a;
+	unsigned int	b;
 
-	current = *stack;
-	while (current->next)
+	a = 1;
+	b = 0;
+	while (*str == ' ' || *str == '\t' || *str == '\n'
+		|| *str == '\v' || *str == '\f' || *str == '\r')
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		if (current->value > current->next->value)
-			return (0);
-		current = current->next;
+		if (*str == '-')
+			a *= -1;
+		str++;
 	}
-	return (1);
-}
-
-void	ps_sort_stack(t_list **stack_a, t_list **stack_b)
-{
-	if (ps_lstsize(*stack_a) <= 5)
-		ps_simple_sort(stack_a, stack_b);
+	while ('0' <= *str && *str <= '9')
+	{
+		b = 10 * b + (*str - '0');
+		str++;
+	}
+	if (b > MAX_INT || b * a < MIN_INT)
+		return (0);
 	else
-		ps_radix_sort(stack_a, stack_b);
+		return (b * a);
 }
 
-int	ps_strncmp(const char *str1, const char *str2)
-{
-	size_t	i;
 
-	i = 0;
-	while (str1[i] != '\0' || str2[i] != '\0')
+
+void	ps_free_stack(t_stack **stack)
+{
+	t_stack	*current;
+	t_stack	*temp;
+
+	current = *stack;
+	while (current)
 	{
-		if (str1[i] != str2[i])
-			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
-		i++;
+		temp = current;
+		current = current->next;
+		free(temp);
 	}
-	return (0);
+	free(stack);
+}
+
+int	ps_min_index(t_stack **stack, int val)
+{
+	t_stack	*current;
+	int		min;
+
+	current = *stack;
+	min = current->index;
+	while (current->next)
+	{
+		current = current->next;
+		if (current->index < min && current->index != val)
+			min = current->index;
+	}
+	return (min);
+}
+
+int	ps_distance(t_stack **stack, int index)
+{
+	t_stack	*current;
+	int		distance;
+
+	distance = 0;
+	current = *stack;
+	while (current)
+	{
+		if (current->index == index)
+			break ;
+		distance++;
+		current = current->next;
+	}
+	return (distance);
 }
