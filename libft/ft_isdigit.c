@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/26 18:15:40 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/07/26 18:15:55 by dangonz3         ###   ########.fr       */
+/*   Created: 2024/04/29 12:09:05 by dangonz3          #+#    #+#             */
+/*   Updated: 2024/04/30 16:00:36 by dangonz3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
-/* 
-rra	reverse rotate a	shifts all elements of stack a from top to bottom
-rrb	reverse rotate b	shifts all elements of stack b from top to bottom
-rrr	reverse rotate a + reverse rotate b	both rra and rrb 
-*/
+int	ft_isdigit(int c)
+{
+	if (48 <= c && c <= 57)
+		return (c);
+	else
+		return (0);
+}
+
+/* int	main(void)
+{
+	int c = 'A';
+
+	printf("%c\n", isdigit(c));
+	return (0);
+} */

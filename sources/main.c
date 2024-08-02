@@ -6,7 +6,7 @@
 /*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 20:52:28 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/07/26 19:33:33 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/07/28 15:52:10 by dangonz3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,7 @@ int	main(int argc, char **argv)
 		return (1);
 	*stack_a = NULL;
 	*stack_b = NULL;
-	
 	ps_initiate_stack(stack_a, argc, argv);
-	if (ps_checkif_sorted(stack_a) == 1)
-	{
-		ps_free_stack(stack_a);
-		ps_free_stack(stack_b);
-		return (0);
-	}
-	ps_sort_stack(stack_a, stack_b);
-	ps_free_stack(stack_a);
-	ps_free_stack(stack_b);
-	
-	return (0);	
+	ps_initiate_sort(stack_a, stack_b);
+	return (0);
 }

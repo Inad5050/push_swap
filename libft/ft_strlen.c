@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/26 18:09:21 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/07/26 18:09:42 by dangonz3         ###   ########.fr       */
+/*   Created: 2024/04/29 12:24:22 by dangonz3          #+#    #+#             */
+/*   Updated: 2024/04/30 16:36:24 by dangonz3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
-/* 
-ra	rotate a	shifts all elements of stack a from bottom to top
-rb	rotate b	shifts all elements of stack b from bottom to top
-rr	rotate a + rotate b	both ra and rb 
-*/
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
