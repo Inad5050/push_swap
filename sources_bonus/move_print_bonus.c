@@ -6,11 +6,11 @@
 /*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 13:34:45 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/07 16:08:51 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/08/07 19:55:02 by dangonz3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/checker_bonus.h"
 
 /* 
 void	ps_push(t_stack **origin, t_stack **target);

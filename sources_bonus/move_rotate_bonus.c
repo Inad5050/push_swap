@@ -6,11 +6,11 @@
 /*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 18:15:40 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/06 17:20:43 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/08/07 19:55:04 by dangonz3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/checker_bonus.h"
 
 /* 
 ra rotate a: Desplaza hacia arriba todos los elementos del stack a una posición,

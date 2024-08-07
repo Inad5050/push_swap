@@ -6,11 +6,11 @@
 /*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 17:45:09 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/07 18:46:25 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/08/07 19:54:45 by dangonz3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/checker_bonus.h"
 
 void	ps_check_input(int argc, char **argv);
 void	ps_check_str(int argc, char **argv);

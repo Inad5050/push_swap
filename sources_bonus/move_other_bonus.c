@@ -6,11 +6,11 @@
 /*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 18:08:33 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/07 16:08:43 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/08/07 19:55:00 by dangonz3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/checker_bonus.h"
 
 /* 
 pa push a: Toma el primer elemento del stack b y lo pone el primero en el stack

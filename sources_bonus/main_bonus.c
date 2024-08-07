@@ -6,11 +6,11 @@
 /*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 20:52:28 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/07 15:27:11 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/08/07 19:54:53 by dangonz3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/checker_bonus.h"
 
 int	main(int argc, char **argv)
 {

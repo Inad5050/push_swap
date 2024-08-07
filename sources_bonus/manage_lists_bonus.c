@@ -6,11 +6,11 @@
 /*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 18:26:51 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/06 18:31:18 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/08/07 19:54:54 by dangonz3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/checker_bonus.h"
 
 t_stack		*ps_lstnew(int value);
 void		ps_lstadd_front(t_stack **stack, t_stack *new_node);
