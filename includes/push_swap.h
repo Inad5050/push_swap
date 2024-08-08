@@ -6,7 +6,7 @@
 /*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:52:43 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/07 19:39:48 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/08/08 19:36:18 by dangonz3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,31 +99,3 @@ void		ps_sort_4(t_stack **stack_a, t_stack **stack_b);
 void		ps_sort_5(t_stack **stack_a, t_stack **stack_b);
 
 #endif
-
-/* 
-sa swap a: Intercambia los dos primeros elementos del stack a. No hace nada si
-hay uno o menos elementos.
-sb swap b: Intercambia los dos primeros elementos del stack b. No hace nada si
-hay uno o menos elementos.
-ss swap a y swap b a la vez.
-
-pa push a: Toma el primer elemento del stack b y lo pone el primero en el stack
-a. No hace nada si b está vacío.
-pb push b: Toma el primer elemento del stack a y lo pone el primero en el stack
-b. No hace nada si a está vacío.
-
-ra rotate a: Desplaza hacia arriba todos los elementos del stack a una posición,
-de forma que el primer elemento se convierte en el último.
-rb rotate b: Desplaza hacia arriba todos los elementos del stack b una posición,
-de forma que el primer elemento se convierte en el último.
-rr ra y rb al mismo tiempo.
-
-rra reverse rotate a: Desplaza hacia abajo todos los elementos del stack a una
-posición, de forma que el último elemento se convierte en el primero.
-rrb reverse rotate b: Desplaza hacia abajo todos los elementos del stack b una
-posición, de forma que el último elemento se convierte en el primero.
-
-rrr rra y rrb al mismo tiempo.
- */
-
-/* ARG="NUMBERS"; ./push_swap $ARG | ./checker_linux $ARG  */

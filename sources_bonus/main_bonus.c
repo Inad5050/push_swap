@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 20:52:28 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/07 19:54:53 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/08/08 20:20:33 by dangonz3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	main(int argc, char **argv)
 {
 	t_stack	**stack_a;
 	t_stack	**stack_b;
+	char	*movements;
 
 	if (argc < 2)
 		return (1);
@@ -29,6 +30,7 @@ int	main(int argc, char **argv)
 	*stack_a = NULL;
 	*stack_b = NULL;
 	ps_initiate_stack(stack_a, argc, argv);
-	ps_initiate_sort(stack_a, stack_b);
+	movements = ft_get_next_line(0);
+	ps_initiate_mv(stack_a, stack_b, movements);
 	return (0);
 }

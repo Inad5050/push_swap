@@ -6,7 +6,7 @@
 #    By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 09:09:40 by dangonz3          #+#    #+#              #
-#    Updated: 2024/08/07 20:07:42 by dangonz3         ###   ########.fr        #
+#    Updated: 2024/08/08 19:57:53 by dangonz3         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,9 @@ SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ = $(SRC:.c=.o)
 
 SRC_BONUS_DIR = sources_bonus/
-SRC_BONUS_FILES = check_input_bonus.c close_program_bonus.c main_bonus.c manage_lists_bonus.c manage_lists2_bonus.c move_other_bonus.c move_print_bonus.c move_rotate_bonus.c others_bonus.c sort_initiate_bonus.c sort_radix_bonus.c sort_simple_bonus.c
+SRC_BONUS_FILES = check_input_bonus.c close_program_bonus.c main_bonus.c manage_lists_bonus1.c manage_lists_bonus2.c move_bonus1.c move_bonus2.c move_initiate_bonus.c move_print_bonus1.c move_print_bonus2.c move_print_bonus3.c others_bonus.c sort_initiate_bonus.c
 SRC_BONUS = $(addprefix $(SRC_BONUS_DIR), $(SRC_BONUS_FILES))
-OBJ_BONUS = $(SRC:.c=.o)
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 # headers
 INCLUDE = -I./includes/
@@ -74,5 +74,7 @@ fclean:
 	@echo "$(COLOR_GREEN)------------ MESSAGE: CLEANING COMPLETED ------------ $(COLOR_RESET)"
 
 re: fclean all
+
+rebonus: fclean all bonus
 
 .PHONY:	all clean fclean re

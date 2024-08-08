@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_initiate.c                                    :+:      :+:    :+:   */
+/*   sort_initiate_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 19:19:32 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/07 19:55:08 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/08/08 15:39:30 by dangonz3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 void	ps_initiate_stack(t_stack **stack_a, int argc, char **argv);
 void	ps_assign_index(t_stack *stack);
-void	ps_initiate_sort(t_stack **stack_a, t_stack **stack_b);
 int		ps_checkif_sorted(t_stack **stack);
-void	ps_sort_method(t_stack **stack_a, t_stack **stack_b);
 
 void	ps_initiate_stack(t_stack **stack_a, int argc, char **argv)
 {
@@ -67,19 +65,6 @@ void	ps_assign_index(t_stack *stack)
 	}
 }
 
-void	ps_initiate_sort(t_stack **stack_a, t_stack **stack_b)
-{
-	if (ps_checkif_sorted(stack_a) == 1)
-	{
-		ps_free_stack(stack_a);
-		ps_free_stack(stack_b);
-		return ;
-	}
-	ps_sort_method(stack_a, stack_b);
-	ps_free_stack(stack_a);
-	ps_free_stack(stack_b);
-}
-
 int	ps_checkif_sorted(t_stack **stack)
 {
 	t_stack	*current;
@@ -92,20 +77,4 @@ int	ps_checkif_sorted(t_stack **stack)
 		current = current->next;
 	}
 	return (1);
-}
-
-void	ps_sort_method(t_stack **stack_a, t_stack **stack_b)
-{
-/* 	ft_printf("STACKA\n");
-	ps_lstprint(*stack_a);
-	ft_printf("STACKB\n");
-	ps_lstprint(*stack_b); */
-	if (ps_lstsize(stack_a) <= 5)
-		ps_simple_sort(stack_a, stack_b);
-	else
-		ps_radix_sort(stack_a, stack_b);
-/* 	ft_printf("STACKA\n");
-	ps_lstprint(*stack_a);
-	ft_printf("STACKB\n");
-	ps_lstprint(*stack_b); */
 }

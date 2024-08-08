@@ -6,7 +6,7 @@
 /*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 19:19:32 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/07 19:36:17 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/08/08 19:45:24 by dangonz3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,16 +96,8 @@ int	ps_checkif_sorted(t_stack **stack)
 
 void	ps_sort_method(t_stack **stack_a, t_stack **stack_b)
 {
-/* 	ft_printf("STACKA\n");
-	ps_lstprint(*stack_a);
-	ft_printf("STACKB\n");
-	ps_lstprint(*stack_b); */
 	if (ps_lstsize(stack_a) <= 5)
 		ps_simple_sort(stack_a, stack_b);
 	else
 		ps_radix_sort(stack_a, stack_b);
-/* 	ft_printf("STACKA\n");
-	ps_lstprint(*stack_a);
-	ft_printf("STACKB\n");
-	ps_lstprint(*stack_b); */
 }

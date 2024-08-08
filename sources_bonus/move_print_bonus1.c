@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_print.c                                       :+:      :+:    :+:   */
+/*   move_print_bonus1.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 13:34:45 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/07 19:55:02 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/08/08 20:00:48 by dangonz3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,38 +25,33 @@ void	ps_reverse_rotate_both(t_stack **stack_a, t_stack **stack_b);
 void	ps_rrr(t_stack **stack_a, t_stack **stack_b); 
 */
 
-void	ps_ra(t_stack **stack);
-void	ps_pb(t_stack **origin, t_stack **target);
-void	ps_pa(t_stack **origin, t_stack **target);
 void	ps_sa(t_stack **stack);
-void	ps_rra(t_stack **stack);
+void	ps_sb(t_stack **stack);
+void	ps_ss(t_stack **stack_a, t_stack **stack_b);
+void	ps_pa(t_stack **origin, t_stack **target);
+void	ps_pb(t_stack **origin, t_stack **target);
 
-void	ps_ra(t_stack **stack)
+void	ps_sa(t_stack **stack_a)
 {
-	ps_rotate(stack);
-	ft_printf("ra\n");
+	ps_swap(stack_a);
 }
 
-void	ps_pb(t_stack **origin, t_stack **target)
+void	ps_sb(t_stack **stack_b)
 {
-	ps_push(origin, target);
-	ft_printf("pb\n");
+	ps_swap(stack_b);
+}
+
+void	ps_ss(t_stack **stack_a, t_stack **stack_b)
+{
+	ps_swap_both(stack_a, stack_b);
 }
 
 void	ps_pa(t_stack **origin, t_stack **target)
 {
 	ps_push(origin, target);
-	ft_printf("pa\n");
 }
 
-void	ps_sa(t_stack **stack)
+void	ps_pb(t_stack **origin, t_stack **target)
 {
-	ps_swap(stack);
-	ft_printf("sa\n");
-}
-
-void	ps_rra(t_stack **stack)
-{
-	ps_reverse_rotate(stack);
-	ft_printf("rra\n");
+	ps_push(origin, target);
 }
