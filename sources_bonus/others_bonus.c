@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   others_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dani <dani@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 17:58:58 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/08 19:42:19 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/08/09 19:49:35 by dani             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker_bonus.h"
 
 long	ps_atoi(const char *str);
-int		ps_min_index(t_stack **stack, int val);
 int		ps_distance(t_stack **stack, int index);
 int		ps_strncmp(const char *str1, const char *str2);
-void	ps_isokay(t_stack **stack_a, t_stack **stack_b);
+char	*ps_strjoin(char *s1, const char *s2);
 
 long	ps_atoi(const char *str)
 {
@@ -89,10 +88,32 @@ int	ps_strncmp(const char *str1, const char *str2)
 	return (0);
 }
 
-void	ps_isokay(t_stack **stack_a, t_stack **stack_b)
+
+char	*ps_strjoin(char *s1, const char *s2)
 {
-	if (ps_checkif_sorted(stack_a) == 1 && !(*stack_b))
-		ft_printf("OK\n");
-	else
-		ft_printf("KO\n");
+	int		i;
+	int		len_s1;
+	int		len_s2;
+	char	*result;
+
+	i = 0;
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+	result = ft_calloc(len_s1 + len_s2 + 1, sizeof(char));
+	if (result == NULL)
+		return (NULL);
+	while (s1[i])
+	{
+		result[i] = s1[i];
+		i++;
+	}
+	i = 0;
+	while (s2[i])
+	{
+		result[len_s1 + i] = s2[i];
+		i++;
+	}
+	result[len_s1 + i] = '\0';
+	free(s1);
+	return (result);
 }

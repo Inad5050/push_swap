@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dani <dani@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:52:43 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/08 19:45:58 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/08/09 19:28:49 by dani             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int			ps_check_duplicates(int argc, char **args);
 //close_program
 int			ps_error(char *message);
 int			ps_error2(char *message, char **args);
+int			ps_error3(char *m, t_stack **stack_a, \
+			t_stack **stack_b, char *mv);
 void		ps_free_stack(t_stack **stack);
 
 //manage_lists1
@@ -93,10 +95,10 @@ void		ps_rrr(t_stack **stack_a, t_stack **stack_b);
 
 //others
 long		ps_atoi(const char *str);
-int			ps_min_index(t_stack **stack, int val);
 int			ps_distance(t_stack **stack, int index);
 int			ps_strncmp(const char *str1, const char *str2);
 void		ps_isokay(t_stack **stack_a, t_stack **stack_b);
+char		*ps_strjoin(char *s1, const char *s2);
 
 //sort_initiate
 void		ps_initiate_stack(t_stack **stack_a, int argc, char **argv);

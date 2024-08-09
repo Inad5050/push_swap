@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   close_program_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dani <dani@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 17:58:58 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/07 20:15:21 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/08/09 19:06:56 by dani             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int		ps_error(char *message);
 int		ps_error2(char *message, char **args);
+int		ps_error3(char *m, t_stack **stack_a, \
+		t_stack **stack_b, char *mv);
 void	ps_free_stack(t_stack **stack);
 
 int	ps_error(char *message)
@@ -49,4 +51,15 @@ void	ps_free_stack(t_stack **stack)
 		free(temp);
 	}
 	free(stack);
+}
+
+int	ps_error3(char *m, t_stack **stack_a, \
+t_stack **stack_b, char *mv)
+{
+	(void)m;
+	ps_free_stack(stack_a);
+	ps_free_stack(stack_b);
+	free(mv);
+	ft_printf("Error\n");
+	exit (0);
 }

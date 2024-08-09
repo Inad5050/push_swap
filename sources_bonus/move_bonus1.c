@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_bonus1.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dani <dani@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 18:15:40 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/08 19:33:19 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/08/10 00:38:49 by dani             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void	ps_rotate(t_stack **stack)
 	t_stack	*last;
 	t_stack	*current;
 
+	if (ps_lstsize(stack) < 2)
+		return ;
 	first = *stack;
 	last = ps_lstlast(*stack);
 	*stack = first->next;
@@ -58,17 +60,23 @@ void	ps_rotate_both(t_stack **stack_a, t_stack **stack_b)
 void	ps_reverse_rotate(t_stack **stack)
 {
 	t_stack	*current;
-	t_stack	*secondlast;
+	t_stack	*last;
 
-	current = *stack;
-	if (!*stack)
+	if (ps_lstsize(stack) < 2)
 		return ;
-	while (current->next->next)
+	current = *stack;
+	last = ps_lstlast(*stack);
+	while (current)
+	{
+		if (current->next->next == NULL)
+		{
+			 current->next = NULL;
+			 break ;
+		}
 		current = current->next;
-	secondlast = current;
-	current = current->next;
-	secondlast->next = NULL;
-	ps_lstadd_front(stack, current);
+	}
+	last->next = *stack;
+	*stack = last;
 }
 
 void	ps_reverse_rotate_both(t_stack **stack_a, t_stack **stack_b)
