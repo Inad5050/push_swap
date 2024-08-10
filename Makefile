@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+         #
+#    By: dani <dani@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 09:09:40 by dangonz3          #+#    #+#              #
-#    Updated: 2024/08/08 19:57:53 by dangonz3         ###   ########.fr        #
+#    Updated: 2024/08/11 00:56:39 by dani             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ COLOR_RESET = \033[0m
 
 # sources
 SRC_DIR = sources/
-SRC_FILES = check_input.c close_program.c main.c manage_lists.c manage_lists2.c move_other.c move_print.c move_rotate.c others.c sort_initiate.c sort_radix.c sort_simple.c
+SRC_FILES = auxiliars.c check_input.c close_program.c main.c manage_lists.c manage_lists2.c move_print.c move_stack.c move_stack2.c sort_initiate.c sort_simple_aux.c sort_simple.c sortlg_a_case.c sortlg_a.c sortlg_apply.c sortlg_auxiliars.c sortlg_b_case.c sortlg_b.c sortlg_movements.c sortlg_movements2.c sortlg_movements3.c
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ = $(SRC:.c=.o)
 

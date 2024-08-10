@@ -1,31 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_rotate.c                                      :+:      :+:    :+:   */
+/*   move_stack2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dani <dani@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 18:15:40 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/06 17:20:43 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/08/11 00:09:30 by dani             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-/* 
-ra rotate a: Desplaza hacia arriba todos los elementos del stack a una posición,
-de forma que el primer elemento se convierte en el último.
-rb rotate b: Desplaza hacia arriba todos los elementos del stack b una posición,
-de forma que el primer elemento se convierte en el último.
-rr ra y rb al mismo tiempo.
-*/
-/* 
-rra reverse rotate a: Desplaza hacia abajo todos los elementos del stack a una
-posición, de forma que el último elemento se convierte en el primero.
-rrb reverse rotate b: Desplaza hacia abajo todos los elementos del stack b una
-posición, de forma que el último elemento se convierte en el primero.
-rrr rra y rrb al mismo tiempo.
- */
 
 void	ps_rotate(t_stack **stack);
 void	ps_rotate_both(t_stack **stack_a, t_stack **stack_b);

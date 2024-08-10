@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_simple.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dani <dani@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 19:37:56 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/07 16:02:31 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/08/11 00:35:07 by dani             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ void	ps_sort_5(t_stack **stack_a, t_stack **stack_b);
 
 void	ps_simple_sort(t_stack **stack_a, t_stack **stack_b)
 {
-	if (ps_lstsize(stack_a) == 2)
+	if (ps_lstsize(*stack_a) == 2)
 		ps_ra(stack_a);
-	if (ps_lstsize(stack_a) == 3)
+	if (ps_lstsize(*stack_a) == 3)
 		ps_sort_3(stack_a);
-	if (ps_lstsize(stack_a) == 4)
+	if (ps_lstsize(*stack_a) == 4)
 		ps_sort_4(stack_a, stack_b);
-	if (ps_lstsize(stack_a) == 5)
+	if (ps_lstsize(*stack_a) == 5)
 		ps_sort_5(stack_a, stack_b);
 }
 

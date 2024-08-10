@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   manage_lists.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dani <dani@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 18:26:51 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/06 18:31:18 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/08/11 00:34:24 by dani             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_stack		*ps_lstnew(int value);
 void		ps_lstadd_front(t_stack **stack, t_stack *new_node);
 void		ps_lstadd_back(t_stack **stack, t_stack *new_node);
 t_stack		*ps_lstlast(t_stack *stack);
-int			ps_lstsize(t_stack **stack);
+int			ps_lstsize(t_stack *stack);
 
 t_stack	*ps_lstnew(int value)
 {
@@ -60,12 +60,12 @@ t_stack	*ps_lstlast(t_stack *stack)
 	return (current);
 }
 
-int	ps_lstsize(t_stack **stack)
+int	ps_lstsize(t_stack *stack)
 {
 	t_stack	*current;
 	size_t	i;
 
-	current = *stack;
+	current = stack;
 	i = 0;
 	while (current)
 	{
