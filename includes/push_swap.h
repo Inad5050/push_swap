@@ -6,7 +6,7 @@
 /*   By: dani <dani@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:52:43 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/11 00:46:50 by dani             ###   ########.fr       */
+/*   Updated: 2024/08/11 12:31:01 by dani             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ typedef struct s_stack
 	long			value;
 	long			index;
 	struct s_stack	*next;
-	struct s_stack	*prev;
 }	t_stack;
 
 //auxiliars
 long		ps_atoi(const char *str);
 int			ps_strncmp(const char *str1, const char *str2);
+void		ps_lstprint(t_stack *stack);
 
 //check_input
 void		ps_check_input(int argc, char **argv);
@@ -49,15 +49,16 @@ int			ps_error(char *message);
 int			ps_error2(char *message, char **args);
 void		ps_free_stack(t_stack **stack);
 
+//initiate_stack
+void		ps_initiate_stack(t_stack **stack_a, int argc, char **argv);
+void		ps_assign_index(t_stack *stack);
+
 //manage_lists
 t_stack		*ps_lstnew(int value);
 void		ps_lstadd_front(t_stack **stack, t_stack *new_node);
 void		ps_lstadd_back(t_stack **stack, t_stack *new_node);
 t_stack		*ps_lstlast(t_stack *stack);
 int			ps_lstsize(t_stack *stack);
-
-//manage_lists2
-void		ps_lstprint(t_stack *stack);
 
 //move_print
 void		ps_ra(t_stack **stack);
@@ -79,8 +80,6 @@ void		ps_reverse_rotate_both(t_stack **stack_a, t_stack **stack_b);
 void		ps_rrr(t_stack **stack_a, t_stack **stack_b);
 
 //sort_initiate
-void		ps_initiate_stack(t_stack **stack_a, int argc, char **argv);
-void		ps_assign_index(t_stack *stack);
 void		ps_initiate_sort(t_stack **stack_a, t_stack **stack_b);
 void		ps_sort_method(t_stack **stack_a, t_stack **stack_b);
 void		ps_lg_sort(t_stack **stack_a, t_stack **stack_b);

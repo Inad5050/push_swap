@@ -6,7 +6,7 @@
 /*   By: dani <dani@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 17:58:58 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/10 23:55:09 by dani             ###   ########.fr       */
+/*   Updated: 2024/08/11 12:30:31 by dani             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 long	ps_atoi(const char *str);
 int		ps_strncmp(const char *str1, const char *str2);
+void	ps_lstprint(t_stack *stack);
 
 long	ps_atoi(const char *str)
 {
@@ -51,4 +52,16 @@ int	ps_strncmp(const char *str1, const char *str2)
 		i++;
 	}
 	return (0);
+}
+
+void	ps_lstprint(t_stack *stack)
+{
+	t_stack	*current;
+
+	current = stack;
+	while (current)
+	{
+		ft_printf("VALUE[%i] == %i\n", current->index, current->value);
+		current = current->next;
+	}
 }
