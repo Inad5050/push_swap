@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   close_program.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dani <dani@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 17:58:58 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/07 18:47:18 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/08/11 19:48:13 by dani             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ void	ps_free_stack(t_stack **stack);
 
 int	ps_error(char *message)
 {
-	ft_printf(COLOR_RED "ERROR:\n%s\n" COLOR_RESET, message);
+	ft_putstr_fd(COLOR_RED "ERROR:\n", 2);
+	ft_putstr_fd(message, 2);
+	ft_putstr_fd(COLOR_RESET "\n", 2);
 	exit (0);
 }
 
@@ -30,7 +32,9 @@ int	ps_error2(char *message, char **args)
 	while (args[i])
 		free(args[i++]);
 	free(args);
-	ft_printf(COLOR_RED "ERROR:\n%s\n" COLOR_RESET, message);
+	ft_putstr_fd(COLOR_RED "ERROR:\n", 2);
+	ft_putstr_fd(message, 2);
+	ft_putstr_fd(COLOR_RESET "\n", 2);
 	exit (0);
 }
 
