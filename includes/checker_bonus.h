@@ -6,7 +6,7 @@
 /*   By: dani <dani@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:52:43 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/09 19:28:49 by dani             ###   ########.fr       */
+/*   Updated: 2024/08/11 20:12:54 by dani             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ typedef struct s_stack
 
 //check_input
 void		ps_check_input(int argc, char **argv);
-void		ps_check_str(int argc, char **argv);
-int			ps_check_ifnumber(int argc, char **args);
-int			ps_check_maxint(int argc, char **args);
-int			ps_check_duplicates(int argc, char **args);
+void		ps_check_str(char **argv);
+int			ps_check_ifnumber(char **args);
+int			ps_check_maxint(char **args);
+int			ps_check_duplicates(char **args);
 
 //close_program
 int			ps_error(char *message);

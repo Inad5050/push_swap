@@ -6,7 +6,7 @@
 /*   By: dani <dani@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 17:58:58 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/10 18:46:21 by dani             ###   ########.fr       */
+/*   Updated: 2024/08/11 20:11:39 by dani             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ps_free_stack(t_stack **stack);
 int	ps_error(char *message)
 {
 	(void)message;
-	ft_printf("Error\n");
+	ft_putstr_fd("Error\n", 2);
 	exit (0);
 }
 
@@ -34,7 +34,7 @@ int	ps_error2(char *message, char **args)
 	while (args[i])
 		free(args[i++]);
 	free(args);
-	ft_printf("Error\n");
+	ft_putstr_fd("Error\n", 2);
 	exit (0);
 }
 
@@ -60,6 +60,6 @@ t_stack **stack_b, char *mv)
 	ps_free_stack(stack_a);
 	ps_free_stack(stack_b);
 	free(mv);
-	ft_printf("Error\n");
+	ft_putstr_fd("Error\n", 2);
 	exit (0);
 }

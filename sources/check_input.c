@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dani <dani@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 17:45:09 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/07 18:46:25 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/08/11 20:09:58 by dani             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 void	ps_check_input(int argc, char **argv);
-void	ps_check_str(int argc, char **argv);
-int		ps_check_ifnumber(int argc, char **args);
-int		ps_check_maxint(int argc, char **args);
-int		ps_check_duplicates(int argc, char **args);
+void	ps_check_str(char **argv);
+int		ps_check_ifnumber(char **args);
+int		ps_check_maxint(char **args);
+int		ps_check_duplicates(char **args);
 
 void	ps_check_input(int argc, char **argv)
 {
@@ -26,7 +26,7 @@ void	ps_check_input(int argc, char **argv)
 	i = 0;
 	if (argc == 2)
 	{
-		ps_check_str(argc, argv);
+		ps_check_str(argv);
 		return ;
 	}
 	else
@@ -37,32 +37,26 @@ void	ps_check_input(int argc, char **argv)
 			ps_error("Wrong argument");
 		i++;
 	}
-	if (ps_check_ifnumber(argc, args) == 0)
+	if (ps_check_ifnumber(args) == 0)
 		ps_error("Non-number argument");
-	if (ps_check_maxint(argc, args) == 0)
+	if (ps_check_maxint(args) == 0)
 		ps_error("Argument exceeds int limits");
-	if (ps_check_duplicates(argc, args) == 0)
+	if (ps_check_duplicates(args) == 0)
 		ps_error("Duplicated number");
 }
 
-void	ps_check_str(int argc, char **argv)
+void	ps_check_str(char **argv)
 {
 	int		i;
 	char	**args;
 
 	i = 0;
 	args = ft_split(argv[1], ' ');
-	while (i < argc - 1)
-	{
-		if (!args[i])
-			ps_error2("Wrong argument", args);
-		i++;
-	}
-	if (ps_check_ifnumber(argc, args) == 0)
+	if (ps_check_ifnumber(args) == 0)
 		ps_error2("Non-number argument", args);
-	if (ps_check_maxint(argc, args) == 0)
+	if (ps_check_maxint(args) == 0)
 		ps_error2("Argument exceeds int limits", args);
-	if (ps_check_duplicates(argc, args) == 0)
+	if (ps_check_duplicates(args) == 0)
 		ps_error2("Duplicated number", args);
 	i = 0;
 	while (args[i])
@@ -70,14 +64,13 @@ void	ps_check_str(int argc, char **argv)
 	free(args);
 }
 
-int	ps_check_ifnumber(int argc, char **args)
+int	ps_check_ifnumber(char **args)
 {
 	int	i;
 	int	x;
 
 	i = 0;
-	x = 0;
-	while (i < argc - 1 && args[i][x])
+	while (args[i])
 	{
 		x = 0;
 		if (args[i][x] == '-' && ('0' <= args[i][x + 1] && \
@@ -94,7 +87,7 @@ int	ps_check_ifnumber(int argc, char **args)
 	return (1);
 }
 
-int	ps_check_maxint(int argc, char **args)
+int	ps_check_maxint(char **args)
 {
 	int		i;
 	long	min;
@@ -103,7 +96,7 @@ int	ps_check_maxint(int argc, char **args)
 	i = 0;
 	min = MIN_INT;
 	max = MAX_INT;
-	while (i < argc - 1)
+	while (args[i])
 	{
 		if (ps_atoi(args[i]) < min || max < ps_atoi(args[i]))
 			return (0);
@@ -112,24 +105,17 @@ int	ps_check_maxint(int argc, char **args)
 	return (1);
 }
 
-int	ps_check_duplicates(int argc, char **args)
+int	ps_check_duplicates(char **args)
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 0;
-	if (argc == 2)
-	{
-		argc = 0;
-		while (args[argc])
-			argc++;
-		argc++;
-	}
-	while (i + 1 < argc - 1)
+	while (args[i])
 	{
 		j = 1;
-		while (i + j < argc - 1)
+		while (args[i + j])
 		{
 			if (ft_atoi(args[i]) == ft_atoi(args[i + j]))
 				return (0);
