@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_initiate_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dani <dani@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 15:33:47 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/10 18:54:13 by dani             ###   ########.fr       */
+/*   Updated: 2024/08/12 18:22:41 by dangonz3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,29 +31,29 @@ void	ps_check_mv(t_stack **stack_a, t_stack **stack_b, char *movements)
 {
 	int		i;
 	int		x;
-	char	**moves;
+	char	**m;
 
 	i = 0;
-	moves = ft_split(movements, '\n');
-	while (moves[i])
+	m = ft_split(movements, '\n');
+	while (m[i])
 	{
-		if (ft_strncmp(moves[i], "sa\0", 3) != 0 && \
-	ft_strncmp(moves[i], "sb\0", 3) != 0 && ft_strncmp(moves[i], "ss\0", 3) != 0 && \
-	ft_strncmp(moves[i], "pa\0", 3) != 0 && ft_strncmp(moves[i], "pb\0", 3) != 0 && \
-	ft_strncmp(moves[i], "ra\0", 3) != 0 && ft_strncmp(moves[i], "rb\0", 3) != 0 && \
-	ft_strncmp(moves[i], "rr\0", 3) != 0 && ft_strncmp(moves[i], "rra\0", 4) != 0 \
-	&& ft_strncmp(moves[i], "rrb\0", 4) != 0 && \
-	ft_strncmp(moves[i], "rrr\0", 4) != 0)
+		if (ft_strncmp(m[i], "sa\0", 3) != 0 && \
+	ft_strncmp(m[i], "sb\0", 3) != 0 && ft_strncmp(m[i], "ss\0", 3) != 0 && \
+	ft_strncmp(m[i], "pa\0", 3) != 0 && ft_strncmp(m[i], "pb\0", 3) != 0 && \
+	ft_strncmp(m[i], "ra\0", 3) != 0 && ft_strncmp(m[i], "rb\0", 3) != 0 && \
+	ft_strncmp(m[i], "rr\0", 3) != 0 && ft_strncmp(m[i], "rra\0", 4) != 0 \
+	&& ft_strncmp(m[i], "rrb\0", 4) != 0 && \
+	ft_strncmp(m[i], "rrr\0", 4) != 0)
 		{
 			x = 0;
-			while (moves[x])
-				free(moves[x++]);
-			free(moves);
+			while (m[x])
+				free(m[x++]);
+			free(m);
 			ps_error3(" ", stack_a, stack_b, movements);
 		}
 		i++;
 	}
-	ps_execute_mv(stack_a, stack_b, moves);
+	ps_execute_mv(stack_a, stack_b, m);
 }
 
 void	ps_execute_mv(t_stack **stack_a, t_stack **stack_b, char **moves)

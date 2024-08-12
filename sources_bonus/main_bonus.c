@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dani <dani@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 20:52:28 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/09 19:50:02 by dani             ###   ########.fr       */
+/*   Updated: 2024/08/12 18:32:07 by dangonz3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ int	main(int argc, char **argv)
 	*stack_b = NULL;
 	ps_initiate_stack(stack_a, argc, argv);
 	movements = ft_strdup("");
-	while ((line = ft_get_next_line(0)))
+	line = ft_get_next_line(0);
+	while (line)
 	{
 		movements = ps_strjoin(movements, line);
 		free(line);
+		line = ft_get_next_line(0);
 	}
-	ps_initiate_mv(stack_a, stack_b, movements);
-	return (0);
 }

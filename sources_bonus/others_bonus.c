@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   others_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dani <dani@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 17:58:58 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/09 19:49:35 by dani             ###   ########.fr       */
+/*   Updated: 2024/08/12 18:22:56 by dangonz3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ int	ps_strncmp(const char *str1, const char *str2)
 	}
 	return (0);
 }
-
 
 char	*ps_strjoin(char *s1, const char *s2)
 {

@@ -3,27 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   move_print_bonus1.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dani <dani@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 13:34:45 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/09 20:21:49 by dani             ###   ########.fr       */
+/*   Updated: 2024/08/12 18:20:30 by dangonz3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker_bonus.h"
-
-/* 
-void	ps_push(t_stack **origin, t_stack **target);
-void	ps_swap(t_stack **stack);
-void	ps_swap_both(t_stack **origin, t_stack **target);
-
-void	ps_rotate(t_stack **stack);
-void	ps_rotate_both(t_stack **stack_a, t_stack **stack_b);
-
-void	ps_reverse_rotate(t_stack **stack);
-void	ps_reverse_rotate_both(t_stack **stack_a, t_stack **stack_b);
-void	ps_rrr(t_stack **stack_a, t_stack **stack_b); 
-*/
 
 void	ps_sa(t_stack **stack);
 void	ps_sb(t_stack **stack);

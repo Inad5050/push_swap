@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_initiate.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dani <dani@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 19:19:32 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/11 12:12:13 by dani             ###   ########.fr       */
+/*   Updated: 2024/08/12 18:07:09 by dangonz3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,5 @@ void	ps_lg_sort(t_stack **stack_a, t_stack **stack_b)
 	{
 		while ((*stack_a)->value != ps_minvalue(*stack_a))
 			ft_rra(stack_a, 0);
-	}			
-}	
+	}
+}
