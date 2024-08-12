@@ -6,7 +6,7 @@
 /*   By: dangonz3 <dangonz3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 20:52:28 by dangonz3          #+#    #+#             */
-/*   Updated: 2024/08/12 18:32:07 by dangonz3         ###   ########.fr       */
+/*   Updated: 2024/08/12 18:41:16 by dangonz3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@ int	main(int argc, char **argv)
 		return (1);
 	ps_check_input(argc, argv);
 	stack_a = (t_stack **)ft_calloc(1, sizeof(t_stack));
-	if (!stack_a)
-		return (1);
 	stack_b = (t_stack **)ft_calloc(1, sizeof(t_stack));
-	if (!stack_b)
+	if (!stack_a | !stack_b)
 		return (1);
 	*stack_a = NULL;
 	*stack_b = NULL;
@@ -39,4 +37,6 @@ int	main(int argc, char **argv)
 		free(line);
 		line = ft_get_next_line(0);
 	}
+	ps_initiate_mv(stack_a, stack_b, movements);
+	return (0);
 }
