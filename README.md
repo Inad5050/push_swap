@@ -43,7 +43,7 @@ Before sorting, each number in stack_a is assigned an index based on its final s
 
 Simple Sort (for 2 to 5 numbers): For very small stacks, specific, hard-coded sequences of moves are used to sort them optimally. For example, sorting three numbers can be done in a maximum of two moves.
 
-Large Sort (for more than 5 numbers): A more complex algorithm is used for larger stacks. It's a variation of a radix sort or "Turk" algorithm:
+Large Sort (for more than 5 numbers): A more complex algorithm is used for larger stacks. It's a variation of a radix sort or **"Turk" algorithm**:
 
     1. Push the first two elements from stack_a to stack_b to start.
 
@@ -57,7 +57,7 @@ Large Sort (for more than 5 numbers): A more complex algorithm is used for large
 
 ## Bonus
 
-The bonus part consists of a second program called checker. This program takes the same list of numbers as an argument, but then reads a sequence of operations from the standard input.
+The bonus part consists of a second program called **checker**. This program takes the same list of numbers as an argument, but then reads a sequence of operations from the standard input.
 
 It applies these operations to the initial stack.
 
@@ -86,22 +86,33 @@ To compile and run this project, you will need:
 #### 1. Compile the project
 
 To compile the push_swap program, clone the repository and run:
+```
 $ make
+```
 
 To compile the checker bonus program:
+```
 $ make bonus
-
+```
 The Makefile will automatically compile the included libft library first.
+
 #### 2. Clean files
 
 To remove the object files (.o):
+```
 $ make clean
+```
 
 To remove object files and the executables (push_swap, checker):
+```
 $ make fclean
+```
 
 To clean and recompile everything:
+```
 $ make re
+```
+
 #### 3. How to run
 
 Run push_swap with a list of numbers as arguments:
