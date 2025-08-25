@@ -76,11 +76,11 @@ OK
 
 To compile and run this project, you will need:
 
-A C compiler, such as gcc.
+* A C compiler, such as gcc.
 
-The make utility.
+* The make utility.
 
-My custom libft library is included as a submodule.
+* My custom libft library is included as a submodule.
 
 ## Instructions
 #### 1. Compile the project
@@ -110,4 +110,6 @@ $ ./push_swap 2 1 5 3 4
 ```
 
 You can also use a single string of space-separated numbers:
+```
 $ ./push_swap "2 1 5 3 4"
+```
